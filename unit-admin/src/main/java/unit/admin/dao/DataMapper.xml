@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="unit.admin.dao.IDataHandler">
+
+	<select id="selectByPrimaryKey" resultType="java.util.HashMap"
+		parameterType="String">
+	    <![CDATA[
+			select ne_id,
+			       ne_name,
+			       region_name,
+			       city_name,
+			       rate,
+			       vvip_flag,
+			       longitude,
+			       latitude
+			  from my_cm_bts
+			 where ne_id = #{ne_id}
+	    ]]>
+	</select>
+	
+</mapper>

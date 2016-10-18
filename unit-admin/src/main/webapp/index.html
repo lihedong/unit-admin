@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>main page</title>
+<script type="text/javascript" src="./lib/jquery-3.1.1.min.js"></script>
+<style type="text/css">
+table {
+	width: 400px;
+	height: 400px;
+	background: yellow;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<table></table>
+	</div>
+	<script type="text/javascript">
+		$.ajax({
+			type : "GET",
+			url : "db/select/" + 1322891559,
+			dataType : "json",
+			success : function(data) {
+				var trs = "";
+				for (var i = 0; i < data.length; i++) {
+					trs += "<tr><td>" + data[i].CITY_NAME + "</td><td>"
+							+ data[i].NE_NAME + "</td></tr>"
+				}
+				$("table").append(trs);
+			}
+		});
+	</script>
+</body>
+</html>
